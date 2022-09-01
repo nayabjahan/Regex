@@ -13,4 +13,10 @@ public class UserRegistrationTest {
         String last= f.getLastName();
         f.validatingInput(lastName,last,"LastName");
     }
+    public void validateEmail(String email) {
+        UserInformation storePattern = new UserInformation();
+        storePattern.setEmail("[a-zA-z0-9]{2,}[_]@(?:([0-9]{1}|[a-zA-Z]{3,5})\\.)+[a-zA-Z]{2,3}");
+        storePattern.validatingInput(email,email,"Email");
+
+    }
 }
