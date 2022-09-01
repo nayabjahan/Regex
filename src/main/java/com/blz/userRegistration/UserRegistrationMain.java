@@ -7,6 +7,7 @@ public class UserRegistrationMain {
     private static final int VALIDATE_FIRSTNAME =1 ;
     private static final int VALIDATE_LASTNAME = 2;
     private static final int VALIDATE_EMAIL = 3;
+    private static final int VALIDATE_MOBILENUM = 4 ;
 
     public static void main(String[] args) {
         System.out.println("welcome to Regex Example");
@@ -15,6 +16,8 @@ public class UserRegistrationMain {
         System.out.println("1.To Validate the First name.");
         System.out.println("2.To Validate the last name.");
         System.out.println("3.To Validate the Email.");
+        System.out.println("4.To Validate Mobile Number.");
+
 
         System.out.println("Enter the option number to perform the operation");
         int option = scan.nextInt();
@@ -33,6 +36,12 @@ public class UserRegistrationMain {
                 System.out.println("Enter the email id: ");
                 String email = scan.next();
                 validate.validateEmail(email);
+                break;
+            case VALIDATE_MOBILENUM:
+                System.out.println("Enter the Mob no: ");
+                scan.nextLine();
+                String input = scan.nextLine();
+                validate.validateMobNumber(input);
                 break;
             default:
                 System.out.println("Please Enter valid option to validate the pattern");

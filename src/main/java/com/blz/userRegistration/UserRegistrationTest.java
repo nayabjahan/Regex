@@ -17,6 +17,11 @@ public class UserRegistrationTest {
         UserInformation storePattern = new UserInformation();
         storePattern.setEmail("[a-zA-z0-9]{2,}[_]@(?:([0-9]{1}|[a-zA-Z]{3,5})\\.)+[a-zA-Z]{2,3}");
         storePattern.validatingInput(email,email,"Email");
-
+    }
+    public void validateMobNumber(String number) {
+        UserInformation storePattern = new UserInformation();
+        storePattern.setMobileNumber("^[0-9]{2}\s?[6-9]{1}[0-9]{9}");
+        String mobPattern = storePattern.getMobileNumber();
+        storePattern.validatingInput(number, mobPattern, "Mobile Number");
     }
 }
