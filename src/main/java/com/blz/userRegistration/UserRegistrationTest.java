@@ -26,10 +26,10 @@ public class UserRegistrationTest {
         String mobPattern = storePattern.getMobileNumber();
         storePattern.validatingInput(number, mobPattern, "Mobile Number");
     }
-        public void validatePassword(String password){
-        //storePattern.setPasswordPattern("^[A-Z]{1}?:[a-zA-Z][_]@.[0-9]{7,}$");
-            storePattern.setPasswordPattern("(?=.*?[A-Z]).{8,}");
-            String passPattern= storePattern.getPasswordPattern();
+    public void validatePassword(String password){
+        storePattern.setPasswordPattern("(?=.*?[A-Z])(?=.*[0-9]).{8,}");
+        String passPattern= storePattern.getPasswordPattern();
         storePattern.validatingInput(password,passPattern,"Password");
     }
 }
+
