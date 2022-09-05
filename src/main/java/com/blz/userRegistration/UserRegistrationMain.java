@@ -11,6 +11,7 @@ public class UserRegistrationMain {
     private static final int VALIDATE_PASSWORD_MIN8_CHAR = 5;
     private static final int VALIDATE_PASSWORD_ATLEAT1UPPERCASE = 6;
     private static final int VALIDATE_PASSWORD_MIN1NUMERIC = 7;
+    private static final int VALIDATE_PASSWORD_1SPECIALCHAR = 8;
 
 
     public static void main(String[] args) {
@@ -24,6 +25,7 @@ public class UserRegistrationMain {
         System.out.println("5.Validate Password:Min8Char");
         System.out.println("6.Validate Password:Atleast 1 Upper Case");
         System.out.println("7.Validate Password:Atleast 1 Numeric");
+        System.out.println("8.Validate Password:Exactly 1 special Character");
         System.out.println("Enter the option number to perform the operation");
         int option = scan.nextInt();
         switch (option) {
@@ -63,6 +65,10 @@ public class UserRegistrationMain {
                 String password2= scan.next();
                 validate.validatePassword(password2);
                 break;
+            case VALIDATE_PASSWORD_1SPECIALCHAR:
+                System.out.println("Enter the Password. Note: Exactly 1 special character should be given");
+                String password3= scan.next();
+                validate.validatePassword(password3);
             default:
                 System.out.println("Please Enter valid option to validate the pattern");
                 break;

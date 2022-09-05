@@ -1,7 +1,6 @@
 package com.blz.userRegistration;
 
 public class UserRegistrationTest {
-
     UserInformation storePattern = new UserInformation();
     public void validateFirstName(String firstName){
         UserInformation store =new UserInformation();
@@ -26,10 +25,10 @@ public class UserRegistrationTest {
         String mobPattern = storePattern.getMobileNumber();
         storePattern.validatingInput(number, mobPattern, "Mobile Number");
     }
-    public void validatePassword(String password){
-        storePattern.setPasswordPattern("(?=.*?[A-Z])(?=.*[0-9]).{8,}");
-        String passPattern= storePattern.getPasswordPattern();
-        storePattern.validatingInput(password,passPattern,"Password");
+    public void validatePassword(String password) {
+        storePattern.setPasswordPattern("(?=.*?[A-Z])(?=.*[0-9])(?=.{8,})[0-9a-zA-Z]*[@#$%_!^&*][0-9a-zA-Z]*");
+        String passPattern = storePattern.getPasswordPattern();
+        storePattern.validatingInput(password, passPattern, "Password");
     }
 }
 
