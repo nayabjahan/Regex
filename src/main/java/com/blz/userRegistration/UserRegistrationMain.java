@@ -9,6 +9,7 @@ public class UserRegistrationMain {
     private static final int VALIDATE_EMAIL = 3;
     private static final int VALIDATE_MOBILENUM = 4 ;
     private static final int VALIDATE_PASSWORD_MIN8_CHAR = 5;
+    private static final int VALIDATE_PASSWORD_ATLEAT1UPPERCASE = 6;
 
     public static void main(String[] args) {
         System.out.println("welcome to Regex Example");
@@ -19,7 +20,7 @@ public class UserRegistrationMain {
         System.out.println("3.To Validate the Email.");
         System.out.println("4.To Validate Mobile Number.");
         System.out.println("5.Validate Password:Min8Char");
-
+        System.out.println("6.Validate Password:Atleast 1 Upper Case");
         System.out.println("Enter the option number to perform the operation");
         int option = scan.nextInt();
         switch (option) {
@@ -48,6 +49,11 @@ public class UserRegistrationMain {
                 System.out.println("Enter the Password. Note: minimum 8 characters should be given");
                 String password= scan.next();
                 validate.validatePassword(password);
+                break;
+            case VALIDATE_PASSWORD_ATLEAT1UPPERCASE:
+                System.out.println("Enter the Password. Note: Atleast 1 upper case should be given");
+                String password1= scan.next();
+                validate.validatePassword(password1);
                 break;
             default:
                 System.out.println("Please Enter valid option to validate the pattern");
