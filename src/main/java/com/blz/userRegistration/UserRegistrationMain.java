@@ -8,6 +8,7 @@ public class UserRegistrationMain {
     private static final int VALIDATE_LASTNAME = 2;
     private static final int VALIDATE_EMAIL = 3;
     private static final int VALIDATE_MOBILENUM = 4 ;
+    private static final int VALIDATE_PASSWORD_MIN8_CHAR = 5;
 
     public static void main(String[] args) {
         System.out.println("welcome to Regex Example");
@@ -17,7 +18,7 @@ public class UserRegistrationMain {
         System.out.println("2.To Validate the last name.");
         System.out.println("3.To Validate the Email.");
         System.out.println("4.To Validate Mobile Number.");
-
+        System.out.println("5.Validate Password:Min8Char");
 
         System.out.println("Enter the option number to perform the operation");
         int option = scan.nextInt();
@@ -42,6 +43,11 @@ public class UserRegistrationMain {
                 scan.nextLine();
                 String input = scan.nextLine();
                 validate.validateMobNumber(input);
+                break;
+            case VALIDATE_PASSWORD_MIN8_CHAR:
+                System.out.println("Enter the Password. Note: minimum 8 characters should be given");
+                String password= scan.next();
+                validate.validatePassword(password);
                 break;
             default:
                 System.out.println("Please Enter valid option to validate the pattern");
