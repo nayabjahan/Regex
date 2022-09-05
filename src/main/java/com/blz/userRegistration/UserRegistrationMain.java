@@ -12,6 +12,7 @@ public class UserRegistrationMain {
     private static final int VALIDATE_PASSWORD_ATLEAT1UPPERCASE = 6;
     private static final int VALIDATE_PASSWORD_MIN1NUMERIC = 7;
     private static final int VALIDATE_PASSWORD_1SPECIALCHAR = 8;
+    private static final int VALIDATE_ALL_EMAILS = 9;
 
 
     public static void main(String[] args) {
@@ -26,6 +27,7 @@ public class UserRegistrationMain {
         System.out.println("6.Validate Password:Atleast 1 Upper Case");
         System.out.println("7.Validate Password:Atleast 1 Numeric");
         System.out.println("8.Validate Password:Exactly 1 special Character");
+        System.out.println("9.Validate all emails");
         System.out.println("Enter the option number to perform the operation");
         int option = scan.nextInt();
         switch (option) {
@@ -69,6 +71,14 @@ public class UserRegistrationMain {
                 System.out.println("Enter the Password. Note: Exactly 1 special character should be given");
                 String password3= scan.next();
                 validate.validatePassword(password3);
+
+                case VALIDATE_ALL_EMAILS:
+                System.out.println("Validating all samples emails list");
+                String[] emails = {"abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com",
+                        "abc111@abc.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com",
+                        "abc@gmail.com.com", "abc+100@gmail.com", "abc123@gmail.a", "abc123@.com.com"};
+                UserRegistrationTest.validateEmailsList(emails);
+                break;
             default:
                 System.out.println("Please Enter valid option to validate the pattern");
                 break;
